@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane prefHeight="685.0" prefWidth="1182.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TrackingController">
+  <tabs>
+    <Tab text="Main Camera">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="originalFrame" fitHeight="446.0" fitWidth="607.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                  <TabPane layoutX="707.0" prefHeight="650.0" prefWidth="473.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Ball">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="617.0" prefWidth="493.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="14.0" layoutY="63.0" prefHeight="403.0" prefWidth="250.0" spacing="20.0">
+                                       <children>
+                                          <Label text="Threshold" />
+                                          <ImageView fx:id="ballMaskImage" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Label alignment="CENTER" text="Morphological operation" />
+                                          <ImageView fx:id="ballMorphImage" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="286.0" layoutY="47.0" prefHeight="524.0" prefWidth="187.0" spacing="50.0">
+                                       <children>
+                                          <VBox alignment="CENTER">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="24.0" prefWidth="177.0">
+                                                   <children>
+                                                      <Label text="HMin" />
+                                                      <Slider fx:id="ballHueStart" max="180.0" showTickMarks="true" />
+                                                   </children>
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="24.0" prefWidth="180.0">
+                                                   <children>
+                                                      <Label text="HMax" />
+                                                      <Slider fx:id="ballHueStop" max="180.0" showTickMarks="true" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="35.0" prefWidth="178.0">
+                                                   <children>
+                                                      <Label text="SMin" />
+                                                      <Slider fx:id="ballSaturationStart" max="255.0" showTickMarks="true" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="33.0" prefWidth="184.0">
+                                                   <children>
+                                                      <Label text="SMax" />
+                                                      <Slider fx:id="ballSaturationStop" max="255.0" showTickMarks="true" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="32.0" prefWidth="178.0">
+                                                   <children>
+                                                      <Label text="VMin" />
+                                                      <Slider fx:id="ballValueStart" max="255.0" showTickMarks="true" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Label" />
+                                                <HBox prefHeight="39.0" prefWidth="180.0">
+                                                   <children>
+                                                      <Label text="VMax" />
+                                                      <Slider fx:id="ballValueStop" max="255.0" showTickMarks="true" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Robots">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane layoutY="-1.0" prefHeight="619.0" prefWidth="476.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="Primary">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ImageView fx:id="robotPrimaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robotPrimaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <VBox layoutX="257.0" layoutY="26.0" prefHeight="495.0" prefWidth="209.0" spacing="50.0">
+                                                         <children>
+                                                            <HBox prefHeight="25.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label text="HMin" />
+                                                                  <Slider fx:id="robotPrimaryHueStart" max="180.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="29.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label text="HMax" />
+                                                                  <Slider fx:id="robotPrimaryHueStop" max="180.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label text="SMin" />
+                                                                  <Slider fx:id="robotPrimarySaturationStart" max="255.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="35.0" prefWidth="186.0">
+                                                               <children>
+                                                                  <Label text="SMax" />
+                                                                  <Slider fx:id="robotPrimarySaturationStop" max="255.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="34.0" prefWidth="179.0">
+                                                               <children>
+                                                                  <Label text="VMin" />
+                                                                  <Slider fx:id="robotPrimaryValueStart" max="255.0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="29.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label text="VMax" />
+                                                                  <Slider fx:id="robotPrimaryValueStop" max="255.0" prefHeight="6.0" prefWidth="140.0" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Robot 1">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Slider fx:id="robot1SecondaryValueStop" layoutX="375.0" layoutY="389.0" max="255.0" />
+                                                      <Slider fx:id="robot1SecondaryValueStart" layoutX="375.0" layoutY="304.0" max="255.0" />
+                                                      <Slider fx:id="robot1SecondarySaturationStop" layoutX="375.0" layoutY="221.0" max="255.0" />
+                                                      <Slider fx:id="robot1SecondarySaturationStart" layoutX="375.0" layoutY="152.0" max="255.0" />
+                                                      <Slider fx:id="robot1SecondaryHueStop" layoutX="375.0" layoutY="104.0" max="180.0" />
+                                                      <Slider fx:id="robot1SecondaryHueStart" layoutX="375.0" layoutY="52.0" max="180.0" />
+                                                      <ImageView fx:id="robot1SecondaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robot1SecondaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Robot 2">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Slider fx:id="robot2SecondaryValueStop" layoutX="375.0" layoutY="436.0" max="255.0" />
+                                                      <Slider fx:id="robot2SecondaryValueStart" layoutX="375.0" layoutY="355.0" max="255.0" />
+                                                      <Slider fx:id="robot2SecondarySaturationStop" layoutX="375.0" layoutY="269.0" max="255.0" />
+                                                      <Slider fx:id="robot2SecondarySaturationStart" layoutX="375.0" layoutY="186.0" max="255.0" />
+                                                      <Slider fx:id="robot2SecondaryHueStop" layoutX="375.0" layoutY="106.0" max="180.0" />
+                                                      <Slider fx:id="robot2SecondaryHueStart" layoutX="375.0" layoutY="38.0" max="180.0" />
+                                                      <ImageView fx:id="robot2SecondaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robot2SecondaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab text="Robot 3">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Slider fx:id="robot3SecondaryValueStop" layoutX="375.0" layoutY="536.0" max="255.0" />
+                                                      <Slider fx:id="robot3SecondaryValueStart" layoutX="375.0" layoutY="423.0" max="255.0" />
+                                                      <Slider fx:id="robot3SecondarySaturationStop" layoutX="375.0" layoutY="335.0" max="255.0" />
+                                                      <Slider fx:id="robot3SecondarySaturationStart" layoutX="375.0" layoutY="251.0" max="255.0" />
+                                                      <Slider fx:id="robot3SecondaryHueStop" layoutX="375.0" layoutY="175.0" max="180.0" />
+                                                      <Slider fx:id="robot3SecondaryHueStart" layoutX="375.0" layoutY="90.0" max="180.0" />
+                                                      <ImageView fx:id="robot3SecondaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robot3SecondaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab text="Robot 4">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Slider fx:id="robot4SecondaryValueStop" layoutX="375.0" layoutY="491.0" max="255.0" />
+                                                      <Slider fx:id="robot4SecondaryValueStart" layoutX="375.0" layoutY="393.0" max="255.0" />
+                                                      <Slider fx:id="robot4SecondarySaturationStop" layoutX="375.0" layoutY="304.0" max="255.0" />
+                                                      <Slider fx:id="robot4SecondarySaturationStart" layoutX="375.0" layoutY="224.0" max="255.0" />
+                                                      <Slider fx:id="robot4SecondaryHueStop" layoutX="375.0" layoutY="147.0" max="180.0" />
+                                                      <Slider fx:id="robot4SecondaryHueStart" layoutX="375.0" layoutY="77.0" max="180.0" />
+                                                      <ImageView fx:id="robot4SecondaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robot4SecondaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab text="Robot 5">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Slider fx:id="robot5SecondaryValueStop" layoutX="375.0" layoutY="480.0" max="255.0" />
+                                                      <Slider fx:id="robot5SecondaryValueStart" layoutX="375.0" layoutY="409.0" max="255.0" />
+                                                      <Slider fx:id="robot5SecondarySaturationStop" layoutX="375.0" layoutY="327.0" max="255.0" />
+                                                      <Slider fx:id="robot5SecondarySaturationStart" layoutX="375.0" layoutY="248.0" max="255.0" />
+                                                      <Slider fx:id="robot5SecondaryHueStop" layoutX="375.0" layoutY="174.0" max="180.0" />
+                                                      <Slider fx:id="robot5SecondaryHueStart" layoutX="375.0" layoutY="85.0" max="180.0" />
+                                                      <ImageView fx:id="robot5SecondaryMaskImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="robot5SecondaryMorphImage" fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <Button fx:id="cameraButton" layoutX="239.0" layoutY="612.0" mnemonicParsing="false" onAction="#startCamera" prefHeight="26.0" prefWidth="123.0" text="Start Camera" />
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Calibration">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="calibrationView" fitHeight="492.0" fitWidth="615.0" layoutX="63.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                  <ChoiceBox fx:id="dotSelector" layoutX="836.0" layoutY="326.0" prefHeight="26.0" prefWidth="269.0" />
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
